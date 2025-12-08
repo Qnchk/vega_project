@@ -15,18 +15,6 @@ std::size_t clamp_period(std::size_t value) { return std::max<std::size_t>(1, va
 
 }  // namespace
 
-std::string_view signal_to_string(Signal signal) {
-  switch (signal) {
-    case Signal::Long:
-      return "long";
-    case Signal::Short:
-      return "short";
-    case Signal::Flat:
-    default:
-      return "flat";
-  }
-}
-
 LiquidityWeightedTrendIndicator::LiquidityWeightedTrendIndicator(IndicatorConfig config)
     : config_(config) {
   config_.trend_period = clamp_period(config_.trend_period);

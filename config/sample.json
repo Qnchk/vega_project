@@ -1,0 +1,31 @@
+{
+  "data": {
+    "input_path": "data/sample.csv"
+  },
+  "lwti": {
+    "trend_period": 10,
+    "momentum_lookback": 3,
+    "volatility_window": 8,
+    "threshold": 0.2,
+    "volume_floor": 1.0
+  },
+  "vwap": {
+    "window": 10,
+    "band_deviation": 1.2
+  },
+  "regime": {
+    "window": 20,
+    "high_vol_threshold": 0.01
+  },
+  "strategy": {
+    "lwti_weight": 0.6,
+    "vwap_weight": 0.4,
+    "max_position": 1.0
+  },
+  "backtest": {
+    "starting_equity": 100000.0,
+    "risk_per_trade": 0.1,
+    "fee_bps": 1.0,
+    "slippage_bps": 1.0
+  }
+}

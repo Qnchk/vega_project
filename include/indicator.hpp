@@ -1,21 +1,11 @@
 #pragma once
 
 #include <string>
-#include <string_view>
 #include <vector>
 
+#include "core/types.hpp"
+
 namespace lwti {
-
-struct Candle {
-  std::string timestamp;
-  double open{0.0};
-  double high{0.0};
-  double low{0.0};
-  double close{0.0};
-  double volume{0.0};
-};
-
-enum class Signal { Long, Short, Flat };
 
 struct IndicatorConfig {
   std::size_t trend_period{14};
@@ -33,8 +23,6 @@ struct IndicatorPoint {
   double volatility{0.0};
   Signal signal{Signal::Flat};
 };
-
-std::string_view signal_to_string(Signal signal);
 
 class LiquidityWeightedTrendIndicator {
  public:

@@ -10,6 +10,12 @@ option(LWTI_BUILD_TESTS "Build unit tests" ON)
 add_library(lwti_lib
     src/indicator.cpp
     src/csv_reader.cpp
+    src/core_types.cpp
+    src/vwap_band.cpp
+    src/regime.cpp
+    src/composite_strategy.cpp
+    src/backtester.cpp
+    src/run_config.cpp
 )
 target_include_directories(lwti_lib PUBLIC include)
 target_compile_features(lwti_lib PUBLIC cxx_std_20)
@@ -24,7 +30,8 @@ if(LWTI_BUILD_TESTS)
     add_library(Catch2::Catch2 ALIAS Catch2)
     target_include_directories(Catch2 INTERFACE tests)
 
-    add_executable(lwti_tests tests/test_indicator.cpp tests/catch_amalgamated.cpp)
+    add_executable(lwti_tests tests/test_indicator.cpp tests/test_strategy.cpp
+        tests/catch_amalgamated.cpp)
     target_link_libraries(lwti_tests PRIVATE lwti_lib Catch2::Catch2)
     add_test(NAME lwti_tests COMMAND lwti_tests)
 endif()

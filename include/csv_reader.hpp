@@ -3,7 +3,7 @@
 #include <string>
 #include <vector>
 
-#include "indicator.hpp"
+#include "core/types.hpp"
 
 namespace lwti {
 
