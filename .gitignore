@@ -1,0 +1,9 @@
+/build
+*.o
+*.obj
+*.pdb
+*.exe
+*.out
+*.a
+*.lib
+.DS_Store
